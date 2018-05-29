@@ -14,25 +14,39 @@ angular.module('app')
     .config(['$stateProvider', '$locationProvider', '$urlRouterProvider', 'JQ_CONFIG', 'MODULE_CONFIG', function($stateProvider, $locationProvider, $urlRouterProvider, JQ_CONFIG, MODULE_CONFIG) {
         $locationProvider.html5Mode(false).hashPrefix('');
 
-        var layout = 'tpl/layout.html?v=' + app_version;
         $urlRouterProvider.otherwise('/app/works');
         $stateProvider
             .state('app', {
                 abstract: true,
                 url: '/app',
-                templateUrl: layout
+                templateUrl: 'tpl/layout.html?v=' + app_version
             })
+            //工作中心
             .state('app.works', {
                 abstract: true,
                 url: '/works',
                 templateUrl: 'tpl/works/layout.html?v=' + app_version,
             })
+            //我的回执
             .state('app.works.receipts', {
-                url: '/receipts',
-                templateUrl: 'tpl/works/receipts.html?v=' + app_version,
+                abstract: true,
+                url: '/receipt',
+                templateUrl: 'tpl/works/receipts/layout.html?v=' + app_version,
+            })
+            //待回执
+            .state('app.works.receipts.todo', {
+                url: '/todo',
+                templateUrl: 'tpl/works/receipts/todo.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
-            .state('app.works.approves', {
+            //已回执
+            .state('app.works.receipts.done', {
+                url: '/done',
+                templateUrl: 'tpl/works/receipts/done.html?v=' + app_version,
+                resolve: load('js/controllers/works.js')
+            })
+
+        .state('app.works.approves', {
                 url: '/approves',
                 templateUrl: 'tpl/works/approves.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
