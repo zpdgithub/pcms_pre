@@ -1,0 +1,23 @@
+{
+    "name": "pcms_pre",
+    "version": "1.0.0",
+    "description": "pcms pre",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node node_modules/http-server/bin/http-server -p 3000"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zpdgithub/pcms_pre.git"
+    },
+    "author": "Peter Zou",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/zpdgithub/pcms_pre/issues"
+    },
+    "homepage": "https://github.com/zpdgithub/pcms_pre#readme",
+    "devDependencies": {
+        "http-server": "0.11.1"
+    }
+}
