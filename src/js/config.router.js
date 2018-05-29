@@ -37,7 +37,7 @@ angular.module('app')
             .state('app.works.receipts.todo', {
                 abstract: true,
                 url: '/todo',
-                template: '<div ui-view></div>',
+                template: '<div ui-view></div>'
             })
             .state('app.works.receipts.todo.list', {
                 url: '/list',
@@ -46,8 +46,13 @@ angular.module('app')
             })
             //已回执
             .state('app.works.receipts.done', {
+                abstract: true,
                 url: '/done',
-                templateUrl: 'tpl/works/receipts/done.html?v=' + app_version,
+                template: '<div ui-view></div>',
+            })
+            .state('app.works.receipts.done.list', {
+                url: '/list',
+                templateUrl: 'tpl/works/receipts/done/list.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
 
