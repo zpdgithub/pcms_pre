@@ -33,4 +33,9 @@ angular.module('app')
     //神品详情
     .controller('ApproveDetailController', ['$scope', '$state', '$stateParams', 'commonService', function($scope, $state, $stateParams, commonService) {
         $scope.item = commonService.getItem(parseInt($stateParams.id));
-    }]);
+    }])
+
+//我发起的
+.controller('StartsListController', ['$scope', '$state', '$stateParams', 'commonService', function($scope, $state, $stateParams, commonService) {
+    $scope.items = commonService.getItems();
+}]);

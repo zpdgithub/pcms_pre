@@ -106,12 +106,17 @@ angular.module('app')
                 resolve: load('js/controllers/works.js')
             })
 
-
-        .state('app.works.turns', {
-            url: '/turns',
-            templateUrl: 'tpl/works/turns.html?v=' + app_version,
-            resolve: load('js/controllers/works.js')
-        })
+        //我发起的
+        .state('app.works.starts', {
+                abstract: true,
+                url: '/starts',
+                template: '<div ui-view></div>'
+            })
+            .state('app.works.starts.list', {
+                url: '/list',
+                templateUrl: 'tpl/works/starts/list.html?v=' + app_version,
+                resolve: load('js/controllers/works.js')
+            })
 
         .state('app.projects', {
                 url: '/projects',
