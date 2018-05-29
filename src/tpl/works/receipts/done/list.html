@@ -1,1 +1,8 @@
-已回执列表
+<div ng-controller="ReceiptsDoneListController">
+    已回执列表
+    <ul>
+        <li ng-repeat="receipt in receipts">
+            <a href="" ui-sref="app.works.receipts.done.detail({id:receipt.id})">{{receipt.title}}</a>
+        </li>
+    </ul>
+</div>

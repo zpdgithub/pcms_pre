@@ -60,6 +60,11 @@ angular.module('app')
                 templateUrl: 'tpl/works/receipts/done/list.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
+            .state('app.works.receipts.done.detail', {
+                url: '/detail?id',
+                templateUrl: 'tpl/works/receipts/done/detail.html?v=' + app_version,
+                resolve: load('js/controllers/works.js')
+            })
 
         .state('app.works.approves', {
                 url: '/approves',
