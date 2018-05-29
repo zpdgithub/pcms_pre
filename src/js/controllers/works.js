@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('ReceiptsListController', ['$scope', '$state', '$stateParams', function($scope, $state, $stateParams) {
+    .controller('ReceiptsTodoController', ['$scope', '$state', '$stateParams', function($scope, $state, $stateParams) {
         $scope.receipts = [{
                 id: 1,
                 title: '任务1'
