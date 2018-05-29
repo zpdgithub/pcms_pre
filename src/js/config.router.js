@@ -35,8 +35,13 @@ angular.module('app')
             })
             //待回执
             .state('app.works.receipts.todo', {
+                abstract: true,
                 url: '/todo',
-                templateUrl: 'tpl/works/receipts/todo.html?v=' + app_version,
+                template: '<div ui-view></div>',
+            })
+            .state('app.works.receipts.todo.list', {
+                url: '/list',
+                templateUrl: 'tpl/works/receipts/todo/list.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
             //已回执
