@@ -23,11 +23,27 @@ angular.module('app')
                 templateUrl: layout
             })
             .state('app.works', {
+                abstract: true,
                 url: '/works',
-                templateUrl: 'tpl/works.html?v=' + app_version,
+                templateUrl: 'tpl/works/layout.html?v=' + app_version,
+            })
+            .state('app.works.receipts', {
+                url: '/receipts',
+                templateUrl: 'tpl/works/receipts.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
-            .state('app.projects', {
+            .state('app.works.approves', {
+                url: '/approves',
+                templateUrl: 'tpl/works/approves.html?v=' + app_version,
+                resolve: load('js/controllers/works.js')
+            })
+            .state('app.works.turns', {
+                url: '/turns',
+                templateUrl: 'tpl/works/turns.html?v=' + app_version,
+                resolve: load('js/controllers/works.js')
+            })
+
+        .state('app.projects', {
                 url: '/projects',
                 templateUrl: 'tpl/projects.html?v=' + app_version,
                 resolve: load('js/controllers/projects.js')
