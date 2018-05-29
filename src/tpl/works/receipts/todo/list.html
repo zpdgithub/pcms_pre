@@ -1,1 +1,9 @@
-待回执列表
+<div ng-controller="ReceiptsListController">
+    待回执列表
+    <ul>
+        <li ng-repeat="receipt in receipts">
+            <a href="" ui-sref="app.works.receipts.todo.solve({id:receipt.id})">{{receipt.title}}</a>
+        </li>
+    </ul>
+    <button>转办</button>
+</div>

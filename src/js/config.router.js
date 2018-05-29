@@ -44,6 +44,11 @@ angular.module('app')
                 templateUrl: 'tpl/works/receipts/todo/list.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
+            .state('app.works.receipts.todo.solve', {
+                url: '/solve?id',
+                templateUrl: 'tpl/works/receipts/todo/solve.html?v=' + app_version,
+                resolve: load('js/controllers/works.js')
+            })
             //已回执
             .state('app.works.receipts.done', {
                 abstract: true,
