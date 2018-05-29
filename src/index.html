@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html ng-app="app">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>PCMS PRE</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../bower_components/angularjs-toaster/toaster.min.css">
+    <link rel="stylesheet" href="../bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script language="JavaScript" src="../bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <script language="JavaScript" src="../bower_components/respond/dest/respond.min.js"></script>
+    <script language="JavaScript" src="../bower_components/es5-shim/es5-shim.js"></script>
+    <script language="JavaScript" src="../bower_components/es5-shim/es5-sham.js"></script>
+    <script>
+        if (!Array.prototype.forEach) {
+            Array.prototype.forEach = function forEach(callback, thisArg) {
+                var T, k;
+                if (this == null) {
+                    throw new TypeError("this is null or not defined");
+                }
+                var O = Object(this);
+                var len = O.length >>> 0;
+                if (typeof callback !== "function") {
+                    throw new TypeError(callback + " is not a function");
+                }
+                if (arguments.length > 1) {
+                    T = thisArg;
+                }
+                k = 0;
+                while (k < len) {
+                    var kValue;
+                    if (k in O) {
+                        kValue = O[k];
+                        callback.call(T, kValue, k, O);
+                    }
+                    k++;
+                }
+            };
+        }
+
+        var date = new Date();
+        var app_version = date.getTime();
+    </script>
+</head>
+
+<body ng-controller="AppController">
+    <div ui-view></div>
+</body>
+<script language="JavaScript" src="../bower_components/jquery/jquery.min.js"></script>
+<script language="JavaScript" src="../bower_components/angular/angular.min.js"></script>
+<script language="JavaScript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script language="JavaScript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
+<script language="JavaScript" src="../bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+<script language="JavaScript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script language="JavaScript" src="../bower_components/angularjs-toaster/toaster.min.js"></script>
+<script language="JavaScript" src="../bower_components/moment/min/moment.min.js"></script>
+<script language="JavaScript" src="../bower_components/moment/locale/zh-cn.js"></script>
+<script language="JavaScript" src="../bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
+<script language="JavaScript" src="../bower_components/lodash/lodash.min.js"></script>
+<script language="JavaScript" src="./js/app.js"></script>
+<script language="JavaScript" src="./js/config.lazyload.js"></script>
+<script language="JavaScript" src="./js/config.router.js"></script>
+<script language="JavaScript" src="./js/main.js"></script>
+
+</html>
