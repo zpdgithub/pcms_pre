@@ -1,6 +1,6 @@
 angular.module('app')
     .service('commonService', ['$rootScope', '$http', '$q', function($rootScope, $http, $q) {
-        var list = [{
+        var items = [{
                 id: 1,
                 title: '任务1'
             },
@@ -13,11 +13,11 @@ angular.module('app')
                 title: '任务3'
             }
         ];
-        this.getList = function() {
-            return list;
+        this.getItems = function() {
+            return items;
         };
         this.getItem = function(id) {
-            return _.find(list, {
+            return _.find(items, {
                 id: id
             });
         };
