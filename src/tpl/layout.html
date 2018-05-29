@@ -1,7 +1,15 @@
-<ul>
-    <li ui-sref='app.works'>工作中心</li>
-    <li ui-sref='app.projects'>项目管理</li>
-    <li ui-sref='app.reports'>报表中心</li>
-    <li ui-sref='app.systems'>系统管理</li>
+<ul class="nav-bar clearfix">
+    <li ng-class="{active:$state.includes('app.works')}">
+        <a href="" ui-sref="app.works">工作中心</a>
+    </li>
+    <li ng-class="{active:$state.includes('app.projects')}">
+        <a href="" ui-sref="app.projects">项目管理</a>
+    </li>
+    <li ng-class="{active:$state.includes('app.reports')}">
+        <a href="" ui-sref="app.reports">报表中心</a>
+    </li>
+    <li ng-class="{active:$state.includes('app.systems')}">
+        <a href="" ui-sref="app.systems">系统管理</a>
+    </li>
 </ul>
 <div ui-view></div>
