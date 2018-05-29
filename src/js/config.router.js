@@ -84,6 +84,11 @@ angular.module('app')
                 templateUrl: 'tpl/works/approves/todo/list.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
+            .state('app.works.approves.todo.solve', {
+                url: '/solve?id',
+                templateUrl: 'tpl/works/approves/todo/solve.html?v=' + app_version,
+                resolve: load('js/controllers/works.js')
+            })
             //已审批
             .state('app.works.approves.done', {
                 abstract: true,
@@ -93,6 +98,11 @@ angular.module('app')
             .state('app.works.approves.done.list', {
                 url: '/list',
                 templateUrl: 'tpl/works/approves/done/list.html?v=' + app_version,
+                resolve: load('js/controllers/works.js')
+            })
+            .state('app.works.approves.done.detail', {
+                url: '/detail?id',
+                templateUrl: 'tpl/works/approves/done/detail.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
 
