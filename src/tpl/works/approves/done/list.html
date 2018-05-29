@@ -1,0 +1,8 @@
+<div ng-controller="ApprovesDoneListController">
+    已审批列表
+    <ul>
+        <li ng-repeat="item in items">
+            <a href="" ui-sref="app.works.approves.done.detail({id:item.id})">{{item.title}}</a>
+        </li>
+    </ul>
+</div>

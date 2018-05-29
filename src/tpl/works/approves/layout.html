@@ -1,0 +1,9 @@
+<ul class="nav-bar clearfix">
+    <li ng-class="{active:$state.includes('app.works.approves.todo')}">
+        <a href="" ui-sref="app.works.approves.todo.list">待审批</a>
+    </li>
+    <li ng-class="{active:$state.includes('app.works.approves.done')}">
+        <a href="" ui-sref="app.works.approves.done.list">已审批</a>
+    </li>
+</ul>
+<div ui-view></div>

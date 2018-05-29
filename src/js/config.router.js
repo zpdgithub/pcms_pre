@@ -21,8 +21,9 @@ angular.module('app')
                 url: '/app',
                 templateUrl: 'tpl/layout.html?v=' + app_version
             })
-            //工作中心
-            .state('app.works', {
+
+        //工作中心
+        .state('app.works', {
                 abstract: true,
                 url: '/works',
                 templateUrl: 'tpl/works/layout.html?v=' + app_version,
@@ -66,16 +67,41 @@ angular.module('app')
                 resolve: load('js/controllers/works.js')
             })
 
+        //我的审批
         .state('app.works.approves', {
+                abstract: true,
                 url: '/approves',
-                templateUrl: 'tpl/works/approves.html?v=' + app_version,
+                templateUrl: 'tpl/works/approves/layout.html?v=' + app_version,
+            })
+            //待审批
+            .state('app.works.approves.todo', {
+                abstract: true,
+                url: '/todo',
+                template: '<div ui-view></div>'
+            })
+            .state('app.works.approves.todo.list', {
+                url: '/list',
+                templateUrl: 'tpl/works/approves/todo/list.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
-            .state('app.works.turns', {
-                url: '/turns',
-                templateUrl: 'tpl/works/turns.html?v=' + app_version,
+            //已审批
+            .state('app.works.approves.done', {
+                abstract: true,
+                url: '/done',
+                template: '<div ui-view></div>'
+            })
+            .state('app.works.approves.done.list', {
+                url: '/list',
+                templateUrl: 'tpl/works/approves/done/list.html?v=' + app_version,
                 resolve: load('js/controllers/works.js')
             })
+
+
+        .state('app.works.turns', {
+            url: '/turns',
+            templateUrl: 'tpl/works/turns.html?v=' + app_version,
+            resolve: load('js/controllers/works.js')
+        })
 
         .state('app.projects', {
                 url: '/projects',

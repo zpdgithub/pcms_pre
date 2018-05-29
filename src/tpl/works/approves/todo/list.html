@@ -1,0 +1,9 @@
+<div ng-controller="ApprovesTodoListController">
+    待审批列表
+    <ul>
+        <li ng-repeat="item in items">
+            <a href="" ui-sref="app.works.approves.todo.solve({id:item.id})">{{item.title}}</a>
+            <button>转办</button>
+        </li>
+    </ul>
+</div>
